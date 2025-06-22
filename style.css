@@ -1,0 +1,241 @@
+css
+
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    background-color:  rgb(173, 185, 215);
+    color: rgb(72, 241, 241);
+
+}
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+header {
+    background-color: #070808;
+    color: rgb(173, 185, 215);
+    padding: 20px 0;
+}
+nav ul li a {
+    color: rgb(168, 33, 33);
+}
+nav ul li a:hover {
+    color: rgb(248, 7, 7);
+
+}
+.container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.menu li a {
+text-decoration: none;
+color: black;
+font-weight: bold;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.mensagem-sucesso {
+color: green;
+margin-top: 10px;
+font-weight: bold;
+} 
+nav ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+nav ul li a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: blue;
+color: white;
+text-decoration: none;
+border-radius: 6px;
+font-weight: bold;
+box-shadow: 0 20px 5px rgba(0,0,0,0.1);
+transition: background 0.3s ease;
+}
+nav ul li a:hover {
+    background-color: blue;
+}
+.animar-titulo {
+    animation: aparecer 1s ease-out;
+}
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.fade {
+    animation: fadeIn 2s ease forwards;
+}
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+.fade:nth-child(1) {animation-delay: 0s;}
+.fade:nth-child(2) {animation-delay: 0.5s;}
+.fade:nth-child(3) {animation-delay: 1s;}
+body {
+    background-color: whitesmoke;
+    color: #333;
+    font-family: arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+img {
+    border-radius: 50px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+img {
+    display: block;
+    margin: 20px auto;
+}
+
+figure {
+    text-align: center;
+    margin: 20px;
+}
+
+
+.linha-textos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.linha-textos p {
+margin: 0;
+}
+.institucional {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    text-align: center;
+    flex-wrap: wrap;
+}
+.bloco {
+    max-width: 250px;
+}
+.justificado {
+    text-align: justify;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.container img {
+    width: 80px;
+    height: auto;
+}
+.galeria {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.galeria img {
+width: 200px;
+height: auto;
+border-radius: 10px;
+}
+h1 {
+    margin: 30px;
+}
+li {
+    margin: 0px;
+}
+@keyframes flutuar {
+    0% { transform: translate(0);}
+    50% { transform: translate(-20px);}
+    100% { transform: translate(0);}
+}
+img {
+    animation: flutuar 3s ease-in-out infinite;
+}
+h2 {
+    margin: 10px;
+}
+body {
+    background-color: rgb(173, 185, 215);
+}
+.galeria-grid {
+    display: gri;
+    grid-template-columns: repeat();
+    gap: 20px;
+    justify-items: center;
+}
+.galeria-grid img{
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
+h2 { 
+    margin: 10px;
+}
+.contacto-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px;
+    margin: 50px;
+}
+.formulário, .info-contacto {
+width: 30%;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: auto;
+
+}
+.formulário-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 40px;
+    align-items: flex-start;
+    
+}
+.formulário-container {
+    width: 50%;
+    margin: 50px;
+}
+footer {
+    font-weight: normal;
+font-size: 11px;
+margin: 20px;
+}
