@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Contador Simples</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      padding-top: 50px;
+      color: blue;
+    }
+
+    #contador {
+      font-size: 80px;
+      margin: 20px;
+      font-weight: bold;
+    }
+
+    button {
+      font-size: 20px;
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .btn-up { background-color: #4CAF50; color: white; }
+    .btn-down { background-color: #f44336; color: white; }
+  </style>
+</head>
+<body>
+
+  <h2>Contador Nível básico</h2>
+  <div id="contador">0</div>
+  <button class="btn-up" onclick="contarAte10()">Aumentar</button>
+  <button class="btn-down" onclick="reduzirAte0()">Reduzir</button>
+
+  <script>
+    let valor = 0;
+    const contador = document.getElementById("contador");
+
+    function atualizar() {
+      contador.textContent = valor;
+    }
+
+    function contarAte10() {
+      if (valor >= 10) return;
+      let intervalo = setInterval(() => {
+        if (valor < 10) {
+          valor++;
+          atualizar();
+        } else {
+          clearInterval(intervalo);
+        }
+      }, 300);
+    }
+
+    function reduzirAte0() {
+      if (valor <= 0) return;
+      let intervalo = setInterval(() => {
+        if (valor > 0) {
+          valor--;
+          atualizar();
+        } else {
+          clearInterval(intervalo);
+        }
+      }, 300);
+    }
+  </script>
+
+</body>
+</html>

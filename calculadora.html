@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora Completa</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: red;
+    }
+
+    .calculadora {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #999;
+      width: 280px;
+      background-color: black;
+    }
+
+    #resultado {
+      width: 100%;
+      height: 40px;
+      font-size: 20px;
+      text-align: right;
+      margin-bottom: 10px;
+      padding-right: 10px;
+    }
+
+    .botoes {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .botoes button {
+      padding: 15px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      background: #e0e0e0;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .botoes button:hover {
+      background: #c0c0c0;
+    }
+
+    .igual {
+      background: #4caf50;
+      color: white;
+    }
+  .igual:hover {
+      background: #3e8e41;
+    }
+
+    .limpar {
+      background: #f44336;
+      color: white;
+    }
+
+    .limpar:hover {
+      background: #d32f2f;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="calculadora">
+    <input type="text" id="resultado" readonly>
+    <div class="botoes">
+      <button onclick="inserir('7')">7</button>
+      <button onclick="inserir('8')">8</button>
+      <button onclick="inserir('9')">9</button>
+      <button onclick="inserir('/')">÷</button>
+
+      <button onclick="inserir('4')">4</button>
+      <button onclick="inserir('5')">5</button>
+      <button onclick="inserir('6')">6</button>
+      <button onclick="inserir('*')">×</button>
+
+      <button onclick="inserir('1')">1</button>
+      <button onclick="inserir('2')">2</button>
+      <button onclick="inserir('3')">3</button>
+      <button onclick="inserir('-')">−</button>
+
+      <button onclick="inserir('0')">0</button>
+      <button onclick="inserir('%')">%</button>
+      <button onclick="inserir('+')">+</button>
+      <button class="igual" onclick="calcular()">=</button>
+
+      <button class="limpar" onclick="limpar()">C</button>
+      <button onclick="apagar()">←</button>
+    </div>
+  </div>
+
+  <script>
+    function inserir(valor) {
+      document.getElementById('resultado').value += valor;
+    }
+
+    function limpar() {
+      document.getElementById('resultado').value = '';
+    }
+
+    function apagar() {
+      let campo = document.getElementById('resultado');
+      campo.value = campo.value.slice(0, -1);
+    }
+
+    function calcular() {
+      let campo = document.getElementById('resultado').value;
+      try {
+        // Tratamento de percentagem simples: "50%" vira "50/100"
+        campo = campo.replace(/(\d+)%/g, '($1/100)');
+        document.getElementById('resultado').value = eval(campo);
+      } catch (e) {
+        document.getElementById('resultado').value = 'Erro';
+      }
+    }
+  </script>
+
+</body>
+</html>
